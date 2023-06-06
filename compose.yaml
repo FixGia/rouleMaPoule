@@ -7,10 +7,10 @@ services :
     environment:
       POSTGRES_USER: your_username
       POSTGRES_PASSWORD: your_password
-      POSTGRES_DB: rouleMaPoule
+      POSTGRES_DB: rouleMaPouleDb
     volumes:
       - ./data:/var/lib/postgresql/data
-  DiceGame:
+  RouleMaPoule:
     image: roulemapoule
     container_name: roule-ma-poule
     build:
