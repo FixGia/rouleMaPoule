@@ -10,7 +10,7 @@ import java.util.UUID;
 public class Trajet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
     @Column
     String ville_depart;
