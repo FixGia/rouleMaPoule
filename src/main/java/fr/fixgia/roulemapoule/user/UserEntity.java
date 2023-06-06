@@ -1,8 +1,6 @@
 package fr.fixgia.roulemapoule.user;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 
@@ -13,7 +11,9 @@ import java.util.UUID;
 public class UserEntity {
 
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column
+    private UUID ID;
     @Column
     private String lastname;
     @Column
