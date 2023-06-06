@@ -64,31 +64,44 @@ nav .nouveauTrajet span {
 
 /* BARRE RECHERCHE */ 
 .recherche {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px auto;
     padding: 20px;
-    display: flex;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    background-color: #fff;
     flex-direction: column;
+    display: flex;
     align-items: stretch;
 }
 
+.recherche:hover {
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.16), 0px 2px 3px rgba(0,0,0,0.23);
+}
+
 .recherche input[type=text] {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    box-sizing: border-box;
 }
 
 .recherche button {
-    padding: 10px;
+    width: 100%;
     background-color: #9191e3;
     color: white;
+    padding: 14px 20px;
+    margin: 15px 0;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.recherche button:hover {   
-     background-color: #f9dbc0;
+.recherche button:hover {
+    background-color: #716de8;
 }
+
 
 
 /* DESKTOP */ 
@@ -140,13 +153,21 @@ nav .nouveauTrajet span {
     }
 
     .recherche {
+        width: 100%;
+    max-width: 900px;
         flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .recherche input[type=text] {
-        margin-bottom: 0;
+        flex: 1;
         margin-right: 10px;
-        flex-grow: 1;
+    }
+
+    .recherche button {
+        width: auto;
+        margin: 0 0 15px
     }
 
 }
