@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/trajet")
 @Slf4j
 public class TrajetController {
 
@@ -19,7 +19,7 @@ public class TrajetController {
         this.trajetService = trajetService;
     }
 
-    @PostMapping("/addUser")
+    @PostMapping("/addTrajet")
     @ResponseStatus(HttpStatus.CREATED)
     public Trajet createUser(@RequestBody final Trajet trajet) {
 
@@ -29,7 +29,7 @@ public class TrajetController {
 
     }
 
-    @PostMapping("/deleteUser/{uuid}")
+    @PostMapping("/deleteTrajet/{uuid}")
     public void deletePatient(@PathVariable("id") UUID uuid){
 
         log.debug("Controller UserApplication: deleteUser - called");
