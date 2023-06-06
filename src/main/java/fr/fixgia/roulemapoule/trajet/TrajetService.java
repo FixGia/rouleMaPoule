@@ -26,7 +26,11 @@ public class TrajetService implements ITrajetService{
 
     @Override
     public void annulerTrajet() {
+    }
 
+    @Override
+    public void getAllTrajet() {
+        trajetRepository.findAll();
     }
 
     @Override

@@ -10,6 +10,8 @@ public interface ITrajetService {
 
     void annulerTrajet();
 
+    void getAllTrajet();
+
     void supprimerTrajet(UUID uuid);
 
 }

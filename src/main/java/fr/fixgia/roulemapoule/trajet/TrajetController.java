@@ -26,13 +26,18 @@ public class TrajetController {
         log.debug("Controller TrajetApplication: create Trajet - Called");
         trajetService.createTrajet(trajet);
         return trajet;
-
     }
+
 
     @PostMapping("/deleteTrajet/{uuid}")
     public void deletePatient(@PathVariable("id") UUID uuid){
 
         log.debug("Controller UserApplication: deleteUser - called");
         trajetService.supprimerTrajet(uuid);
+    }
+
+    @GetMapping("/all")
+    public void getAllTrajet() {
+        trajetService.getAllTrajet();
     }
 }
