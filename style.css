@@ -86,8 +86,8 @@ nav .nouveauTrajet span {
     cursor: pointer;
 }
 
-.recherche button:hover {
-    background-color: yellow;
+.recherche button:hover {   
+     background-color: #f9dbc0;
 }
 
 
