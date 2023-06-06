@@ -33,4 +33,9 @@ public class UserController {
         userService.deleteUser(email);
     }
 
+    @GetMapping("/hello")
+    public String affichageHello() {
+        return "coucou ça marche";
+    }
+
 }
