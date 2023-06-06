@@ -2,7 +2,7 @@ version: '3.8'
 
 services :
   mysql:
-    image: mysql:8.0.28
+    image: mysql:latest
     volumes:
       - db_data:/var/lib/mysql
     container_name: mysqldb
@@ -24,5 +24,7 @@ services :
       MYSQL_PORT: 3306
       MYSQL_USERNAME: root
       MYSQL_PASSWORD: user
+    depends_on:
+      - mysql
 volumes:
   db_data: {}
