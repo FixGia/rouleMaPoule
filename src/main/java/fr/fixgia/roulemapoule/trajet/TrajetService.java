@@ -2,6 +2,7 @@ package fr.fixgia.roulemapoule.trajet;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -29,8 +30,8 @@ public class TrajetService implements ITrajetService{
     }
 
     @Override
-    public void getAllTrajet() {
-        trajetRepository.findAll();
+    public List<Trajet> getAllTrajet() {
+        return trajetRepository.findAll();
     }
 
     @Override

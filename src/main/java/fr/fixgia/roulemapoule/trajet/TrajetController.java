@@ -1,10 +1,10 @@
 package fr.fixgia.roulemapoule.trajet;
 
-import fr.fixgia.roulemapoule.user.UserEntity;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @CrossOrigin
@@ -29,7 +29,7 @@ public class TrajetController {
     }
 
 
-    @PostMapping("/deleteTrajet/{uuid}")
+    @DeleteMapping("/deleteTrajet/{id}")
     public void deletePatient(@PathVariable("id") UUID uuid){
 
         log.debug("Controller UserApplication: deleteUser - called");
@@ -37,7 +37,7 @@ public class TrajetController {
     }
 
     @GetMapping("/all")
-    public void getAllTrajet() {
-        trajetService.getAllTrajet();
+    public List<Trajet> getAllTrajet() {
+        return trajetService.getAllTrajet();
     }
 }
