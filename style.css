@@ -61,6 +61,37 @@ nav .nouveauTrajet span {
     display: none
 }
 
+
+/* BARRE RECHERCHE */ 
+.recherche {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.recherche input[type=text] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.recherche button {
+    padding: 10px;
+    background-color: #9191e3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.recherche button:hover {
+    background-color: yellow;
+}
+
+
+/* DESKTOP */ 
 @media screen and (min-width: 850px) {
        section, .maxWidth {
             max-width: 1920px;
@@ -106,6 +137,16 @@ nav .nouveauTrajet span {
 
     ::-webkit-scrollbar-track {
         background-color: #7a82d9;
+    }
+
+    .recherche {
+        flex-direction: row;
+    }
+
+    .recherche input[type=text] {
+        margin-bottom: 0;
+        margin-right: 10px;
+        flex-grow: 1;
     }
 
 }
