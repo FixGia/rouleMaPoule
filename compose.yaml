@@ -1,16 +1,17 @@
 version: '3.8'
 
 services :
-  postgres:
-    image: postgres:latest
-    restart: always
-    environment:
-      POSTGRES_USER: your_username
-      POSTGRES_PASSWORD: your_password
-      POSTGRES_DB: rouleMaPouleDb
+  mysql:
+    image: mysql:8.0.28
     volumes:
-      - ./data:/var/lib/postgresql/data
-  RouleMaPoule:
+      - db_data:/var/lib/mysql
+    container_name: mysqldb
+    environment:
+      MYSQL_ROOT_PASSWORD: user
+      MYSQL_DATABASE: rouleMaPouleDb
+    ports:
+      - "3307:3306"
+  roulemapoule:
     image: roulemapoule
     container_name: roule-ma-poule
     build:
@@ -18,3 +19,10 @@ services :
       dockerfile: dockerfile
     ports:
       - "8080:8080"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: user
+volumes:
+  db_data: {}

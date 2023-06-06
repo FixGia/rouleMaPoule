@@ -9,7 +9,7 @@ COPY src ./src
 COPY pom.xml .
 
 # Compiler l'application
-RUN mvn package
+RUN mvn clean package
 
 # Exposer le port sur lequel l'application écoute
 EXPOSE 8080

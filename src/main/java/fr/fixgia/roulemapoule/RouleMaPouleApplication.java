@@ -8,7 +8,6 @@ public class RouleMaPouleApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(RouleMaPouleApplication.class, args);
-        System.out.println("L'application Run");
     }
 
 }
