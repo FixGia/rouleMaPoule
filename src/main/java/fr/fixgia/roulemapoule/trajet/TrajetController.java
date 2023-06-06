@@ -21,7 +21,7 @@ public class TrajetController {
 
     @PostMapping("/addTrajet")
     @ResponseStatus(HttpStatus.CREATED)
-    public Trajet createUser(@RequestBody final Trajet trajet) {
+    public Trajet createTrajet(@RequestBody final Trajet trajet) {
 
         log.debug("Controller TrajetApplication: create Trajet - Called");
         trajetService.createTrajet(trajet);
@@ -30,7 +30,7 @@ public class TrajetController {
 
 
     @DeleteMapping("/deleteTrajet/{id}")
-    public void deletePatient(@PathVariable("id") UUID uuid){
+    public void deleteTrajet(@PathVariable("id") UUID uuid){
 
         log.debug("Controller UserApplication: deleteUser - called");
         trajetService.supprimerTrajet(uuid);
