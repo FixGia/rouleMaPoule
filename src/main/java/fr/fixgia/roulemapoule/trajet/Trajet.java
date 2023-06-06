@@ -21,6 +21,8 @@ public class Trajet {
     @Column
     String description;
     @Column
-    String metadonnee;
+    String Places;
+    @Column
+    Boolean reserver;
 
 }
