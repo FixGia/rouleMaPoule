@@ -30,11 +30,8 @@ public class ReservationService implements IReservationService{
 
     @Override
     public void reserver(Reservation reservation) {
-       Optional<Reservation> reservationExist = reservationRepository.findById(reservation.getId());
-       if(reservationExist.isPresent()) {
            changerNbDePlaceDuTrajet(reservation.getNbDePlace(), reservation.getTrajetID());
            createReservation(reservation);
-       }
     }
 
     private void changerNbDePlaceDuTrajet(Integer nbDeUser, UUID uuid) {

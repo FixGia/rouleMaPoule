@@ -2,6 +2,7 @@ package fr.fixgia.roulemapoule.user;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -32,5 +33,10 @@ public class UserService implements IUserService{
             userEntityRepository.delete(userToDelete);
         }
         throw new RuntimeException("utilisateurs existe déjà");
+    }
+
+    @Override
+    public List<UserEntity> getAllUser() {
+        return userEntityRepository.findAll();
     }
 }

@@ -14,10 +14,10 @@ public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+     UUID id;
 
     @Column
-    private UUID trajetID;
+    UUID trajetID;
 
     @Column
     String dateReservation;

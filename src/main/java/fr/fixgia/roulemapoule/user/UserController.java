@@ -4,6 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin
 @RestController
 @RequestMapping("/api/user")
@@ -34,9 +36,9 @@ public class UserController {
         userService.deleteUser(email);
     }
 
-    @GetMapping("/hello")
-    public String affichageHello() {
-        return "coucou ça marche";
+    @GetMapping("/all")
+    public List<UserEntity> getAll() {
+        return userService.getAllUser();
     }
 
 }
