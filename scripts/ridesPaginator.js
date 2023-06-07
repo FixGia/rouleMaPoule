@@ -74,17 +74,17 @@ function generateRideCardElement(ride){
 
     let actionElement = document.createElement("div")
     actionElement.classList.add("action")
-
+/*
     let buttonElement = document.createElement("button")
     buttonElement.innerText = "voir le détail du trajet"
     buttonElement.id = "btnDetail"
-
+*/
     let bookingBtn = document.createElement("button")
     bookingBtn.innerText = "Réserver une place"
-    bookingBtn.onclick = bookingARide(ride.id)
+    bookingBtn.addEventListener("click", function () {bookingARide(ride.id)})
 
 
-    actionElement.appendChild(buttonElement)
+    //actionElement.appendChild(buttonElement)
     actionElement.appendChild(bookingBtn)
 
     infoElement.appendChild(rideElement)

@@ -12,19 +12,20 @@ async function bookingRideForUser(data) {
     }
 
     let booking = {
-        trajetID: data.trajet,
+        trajetID: data.rideId,
         dateReservation: "07-06-2023",
         nbDePlace: 1,
         utilisateurID: users[1].id
     }
 
-    conf.body = JSON.stringify(data)
+    conf.body = JSON.stringify(booking)
 
-    let query = await fetch(`${API_URL}reservation/addReservationl`)
-    if (query.ok === true) {
-        return query.json()
-    }
-    throw new Error("Une erreur est survenue")
+    let query = fetch(`${API_URL}reservation/addReservation`, conf)
+    query.then(response => {
+        console.log(response)
+    }).catch(error => {
+        console.log("error", error)
+    })
 }
 async function requestUsers() {
     let query = await fetch(`${API_URL}user/all`)
@@ -126,7 +127,7 @@ function insertFakeData(){
         date: null,
         heureDepart: null,
         description: "Trajet de test",
-        places: Math.floor(Math.random() * 4) + 2,
+        places: 4,
         prix: null,
         complet: false,
         conducteurID: driver,
