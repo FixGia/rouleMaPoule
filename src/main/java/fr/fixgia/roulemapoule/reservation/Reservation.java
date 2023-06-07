@@ -14,13 +14,13 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @Column
-    @OneToOne
+    @JoinColumn
+    @ManyToOne
     private Trajet trajet;
 
     @Column
     String dateReservation;
-    @Column
+
     @OneToMany
     private List<UserEntity> passager;
 

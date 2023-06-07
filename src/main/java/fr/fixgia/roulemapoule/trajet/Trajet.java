@@ -26,7 +26,7 @@ public class Trajet {
     @Column
     Boolean complet;
 
-    @Column
+    @JoinColumn
     @ManyToOne
     UserEntity conducteur;
 
