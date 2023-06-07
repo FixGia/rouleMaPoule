@@ -189,9 +189,14 @@
             rides = data
             maxRides = Math.ceil(rides.length / 5)
             currentIndex = 1
-            setRides()
-            document.getElementById("pagination_container").classList.remove("hidden")
-            togglePaginationBtn()
+            if(rides.length > 0) {
+                setRides()
+                document.getElementById("pagination_container").classList.remove("hidden")
+                togglePaginationBtn()
+            } else {
+                document.getElementById("pagination_container").classList.add("hidden")
+                generateNoRideCard()
+            }
         })
 
     }
