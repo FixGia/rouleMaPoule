@@ -33,15 +33,18 @@ public class TrajetService implements ITrajetService{
     }
 
     public List<Trajet> getTrajetByVilleDepart(String villeDepart) {
-        return trajetRepository.findTrajetByVille_depart(villeDepart);
+        return null;
+   //     return trajetRepository.findTrajetsByVille_depart(villeDepart);
     }
 
     public List<Trajet> getTrajetByVilleArrivee(String villeArrivee) {
-        return trajetRepository.findTrajetByVille_arrivee(villeArrivee);
+        return null;
+     //   return trajetRepository.findTrajetsByVille_arrivee(villeArrivee);
     }
 
     public List<Trajet> getTrajetByVilleDepartAndArrivee(String villeDepart, String villeArrivee) {
-        return trajetRepository.findTrajetByVille_departAndVille_arrivee(villeDepart,villeArrivee);
+        return null;
+     //   return trajetRepository.findTrajetsByVille_departAndVille_arrivee(villeDepart,villeArrivee);
     }
 
     public Trajet getTrajetById(UUID id) {

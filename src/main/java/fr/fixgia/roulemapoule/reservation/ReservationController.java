@@ -32,7 +32,7 @@ public class ReservationController {
 
     @DeleteMapping("/deleteReservation/{id}")
     public void deleteReservation(@PathVariable("id") UUID uuid){
-        log.debug("Controller UserApplication: deleteUser - called");
+        log.debug("Controller ReservationApplication: deleteReservation - called");
         reservationService.supprimerReservation(uuid);
     }
 
