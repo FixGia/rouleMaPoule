@@ -183,7 +183,7 @@
     function findRides(){
         let start = document.querySelectorAll("#home_container input")[0].value
         let end = document.querySelectorAll("#home_container input")[1].value
-        let response = requestFidesFromCities(start, end)
+        let response = requestRidesFromCities(start, end)
         response.then(data => {
             rides = data
             maxRides = Math.ceil(rides.length / 5)

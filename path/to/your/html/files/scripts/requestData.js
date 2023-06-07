@@ -41,7 +41,7 @@ async function getRides() {
     }
     throw new Error("Une erreur est survenue")
 }
-async function requestFidesFromCities(startCity, endCity){
+async function requestRidesFromCities(startCity, endCity){
     let start = `villeDepart=${startCity}`
     let end = `villeArrivee=${endCity}`
 
