@@ -67,10 +67,13 @@ function generateRideCardElement(ride){
     rideElement.innerText = `${ride.villeDepart} - ${ride.villeArrivee}`
 
     let priceElement = document.createElement("p")
-    priceElement.innerText = `Prix : ${ride.prix}`
+    priceElement.innerText = `Prix : ${ride.prix}€`
 
     let seatElement = document.createElement("p")
     seatElement.innerText = `Places restantes : ${ride.places}`
+
+    let dateElement = document.createElement("p")
+    dateElement.innerText = `Date : ${ride.date} à ${ride.heureDepart}`
 
     let actionElement = document.createElement("div")
     actionElement.classList.add("action")
@@ -90,6 +93,7 @@ function generateRideCardElement(ride){
     infoElement.appendChild(rideElement)
     infoElement.appendChild(priceElement)
     infoElement.appendChild(seatElement)
+    infoElement.appendChild(dateElement)
 
     cardElement.appendChild(infoElement)
     cardElement.appendChild(actionElement)
