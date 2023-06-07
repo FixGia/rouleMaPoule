@@ -121,11 +121,18 @@
 
 
     window.onload = () => {
-        //insertFakeUsers()
         requestUsers().then(data => {
-            console.log(data)
+            console.log("users",data)
             users = data
-            //insertFakeData()
+            if(data.length === 0){
+                console.log("run fake user")
+                insertFakeUsers().then(response => {
+                    requestUsers().then(data => {
+                        users = data
+                        insertFakeData()
+                    })
+                })
+            }
         })
 
 
