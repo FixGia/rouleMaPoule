@@ -187,6 +187,7 @@
         response.then(data => {
             rides = data
             maxRides = Math.ceil(rides.length / 5)
+            currentIndex = 1
             setRides()
             document.getElementById("pagination_container").classList.remove("hidden")
             togglePaginationBtn()
