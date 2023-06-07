@@ -3,6 +3,7 @@ package fr.fixgia.roulemapoule.trajet;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -20,18 +21,35 @@ public class TrajetService implements ITrajetService{
 
     }
 
-    @Override
-    public void reserverTrajet() {
-
+    public void saveTrajet(Trajet trajet) {
+        trajetRepository.save(trajet);
     }
 
-    @Override
-    public void annulerTrajet() {
-    }
+
 
     @Override
     public List<Trajet> getAllTrajet() {
         return trajetRepository.findAll();
+    }
+
+    public List<Trajet> getTrajetByVilleDepart(String villeDepart) {
+        return trajetRepository.findTrajetByVille_depart(villeDepart);
+    }
+
+    public List<Trajet> getTrajetByVilleArrivee(String villeArrivee) {
+        return trajetRepository.findTrajetByVille_arrivee(villeArrivee);
+    }
+
+    public List<Trajet> getTrajetByVilleDepartAndArrivee(String villeDepart, String villeArrivee) {
+        return trajetRepository.findTrajetByVille_departAndVille_arrivee(villeDepart,villeArrivee);
+    }
+
+    public Trajet getTrajetById(UUID id) {
+        Optional<Trajet> trajet = trajetRepository.findById(id);
+        if(trajet.isPresent()) {
+            return trajet.get();
+        }
+        throw new RuntimeException("Le trajet n'existe pas");
     }
 
     @Override

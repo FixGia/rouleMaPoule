@@ -31,8 +31,7 @@ public class ReservationController {
 
 
     @DeleteMapping("/deleteReservation/{id}")
-    public void deleteTrajet(@PathVariable("id") UUID uuid){
-
+    public void deleteReservation(@PathVariable("id") UUID uuid){
         log.debug("Controller UserApplication: deleteUser - called");
         reservationService.supprimerReservation(uuid);
     }

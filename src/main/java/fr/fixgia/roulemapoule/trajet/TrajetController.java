@@ -40,4 +40,21 @@ public class TrajetController {
     public List<Trajet> getAllTrajet() {
         return trajetService.getAllTrajet();
     }
+
+    @GetMapping("/rechercheVilleDepart")
+    public List<Trajet> getTrajetByVilleDepart(String villeDepart){
+        return trajetService.getTrajetByVilleDepart(villeDepart);
+    }
+
+    @GetMapping("/rechercheVilleArrivee")
+    public List<Trajet> getTrajetByVilleArrivee(String villeArrivee){
+        return trajetService.getTrajetByVilleArrivee(villeArrivee);
+    }
+
+    @GetMapping("/rechercheVilleDepartEtArrivee")
+    public List<Trajet> getTrajetByVilleDepartEtArrivee(String villeDepart, String villeArrivee){
+        return trajetService.getTrajetByVilleDepartAndArrivee(villeDepart, villeArrivee);
+    }
+
+
 }

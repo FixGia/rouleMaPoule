@@ -7,12 +7,18 @@ public interface ITrajetService {
 
     void createTrajet(Trajet trajet);
 
-    void reserverTrajet();
+    void saveTrajet(Trajet trajet);
 
-    void annulerTrajet();
+    Trajet getTrajetById(UUID id);
 
     List<Trajet> getAllTrajet();
 
     void supprimerTrajet(UUID uuid);
+
+    List<Trajet> getTrajetByVilleArrivee(String villeArrivee);
+
+    List<Trajet> getTrajetByVilleDepart(String villeDepart);
+
+    List<Trajet> getTrajetByVilleDepartAndArrivee(String villeDepart, String villeArrivee);
 
 }
