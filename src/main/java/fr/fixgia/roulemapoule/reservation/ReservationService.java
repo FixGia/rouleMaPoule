@@ -37,11 +37,11 @@ public class ReservationService implements IReservationService{
     private void changerNbDePlaceDuTrajet(Integer nbDeUser, UUID uuid) {
        Trajet trajet = trajetService.getTrajetById(uuid);
        Integer nbDePlace = trajet.getPlaces();
-        if (nbDePlace > 1) {
-            trajet.setPlaces(nbDePlace - nbDeUser);
-            trajetService.saveTrajet(trajet);
+        if (nbDePlace == 0) {
+            throw new RuntimeException("plus de place");
     }
-        throw new RuntimeException("plus de place");
+        trajet.setPlaces(nbDePlace - nbDeUser);
+        trajetService.saveTrajet(trajet);
     }
 
     @Override
