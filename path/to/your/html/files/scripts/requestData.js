@@ -80,29 +80,12 @@ function insertFakeData(){
         "Paris",
         "Lille",
         "Toulouse",
-        "Montpellier",
-        "Nice",
-        "Bonifacio",
-        "Bordeau",
-        "Rennes",
-        "Strasbourg",
-        "Brest",
-        "Amiens",
-        "Metz",
         "Porto-Vecchio",
-        "Gap",
-        "Biarritz",
-        "Nantes",
-        "Rouen",
-        "Orléans",
-        "Lorient"
     ]
     let dates = [
-        "07-06-2023",
         "08-06-2023",
         "09-06-2023",
         "10-06-2023",
-        "11-06-2023",
     ]
     let hours = [
         "6:00",
@@ -118,9 +101,6 @@ function insertFakeData(){
         25, 30, 40, 50, 75, 100,
     ]
 
-
-    let driver = users[Math.floor(Math.random() * users.length )].id
-
     let defaultRide = {
         villeDepart: null,
         villeArrivee: null,
@@ -130,34 +110,26 @@ function insertFakeData(){
         places: 4,
         prix: null,
         complet: false,
-        conducteurID: driver,
+        conducteurID: users[Math.floor(Math.random() * users.length )].id,
     }
 
-    let conf = {
-        method: 'POST',
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: null
-    }
-
-    cities.forEach(city => {
-        cities.forEach(town => {
-            if(town !== city){
-                let ride = defaultRide
-                ride.villeDepart = city
-                ride.villeArrivee = town
-                ride.date = dates[Math.floor(Math.random() * dates.length)]
-                ride.prix = prices[Math.floor(Math.random()* prices.length)]
-                ride.heureDepart = hours[Math.floor(Math.random() *  hours.length)]
-                insertRide(ride)
-            }
+    dates.forEach(date => {
+        cities.forEach(city => {
+            cities.forEach(town => {
+                if(town !== city){
+                    let ride = defaultRide
+                    ride.villeDepart = city
+                    ride.villeArrivee = town
+                    ride.date = date
+                    ride.prix = prices[Math.floor(Math.random()* prices.length)]
+                    ride.heureDepart = hours[Math.floor(Math.random() *  hours.length)]
+                    insertRide(ride)
+                }
+            })
         })
     })
-
-
 }
+
 async function insertFakeUsers(){
 
     let users = [
