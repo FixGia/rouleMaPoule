@@ -9,9 +9,9 @@ import java.util.UUID;
 @Repository
 public interface TrajetRepository extends JpaRepository<Trajet, UUID> {
 
-    //List<Trajet> findTrajetsByVille_depart(String ville_depart);
+    List<Trajet> findTrajetsByVilleDepart(String villeDepart);
 
-   // List<Trajet> findTrajetsByVille_arrivee(String ville_arrivee);
+    List<Trajet> findTrajetsByVilleArrivee(String ville_arrivee);
 
-   // List<Trajet> findTrajetsByVille_departAndVille_arrivee(String villeDepart, String villeArrivee);
+    List<Trajet> findTrajetsByVilleDepartAndVilleArrivee(String villeDepart, String villeArrivee);
 }

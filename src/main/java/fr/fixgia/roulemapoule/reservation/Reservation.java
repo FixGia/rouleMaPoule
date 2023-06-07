@@ -3,6 +3,7 @@ package fr.fixgia.roulemapoule.reservation;
 import fr.fixgia.roulemapoule.trajet.Trajet;
 import fr.fixgia.roulemapoule.user.UserEntity;
 import jakarta.persistence.*;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 import java.util.List;
 import java.util.UUID;
@@ -14,15 +15,18 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    @JoinColumn
-    @ManyToOne
-    private Trajet trajet;
+
+    @Column
+    private UUID trajetID;
 
     @Column
     String dateReservation;
 
-    @OneToMany
-    private List<UserEntity> passager;
+    @Column
+    Integer nbDePlace;
+
+    @Column
+    UUID utilisateurID;
 
 
 

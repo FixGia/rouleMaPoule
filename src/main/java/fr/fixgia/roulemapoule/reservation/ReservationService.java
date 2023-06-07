@@ -32,7 +32,7 @@ public class ReservationService implements IReservationService{
     public void reserver(Reservation reservation) {
        Optional<Reservation> reservationExist = reservationRepository.findById(reservation.getId());
        if(reservationExist.isPresent()) {
-           changerNbDePlaceDuTrajet(reservation.getPassager().size(), reservation.getTrajet().getId());
+           changerNbDePlaceDuTrajet(reservation.getNbDePlace(), reservation.getTrajetID());
            createReservation(reservation);
        }
     }

@@ -3,7 +3,6 @@ package fr.fixgia.roulemapoule.trajet;
 import fr.fixgia.roulemapoule.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.Data;
-import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -14,9 +13,9 @@ public class Trajet {
     @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
     @Column
-    String ville_depart;
+    String villeDepart;
     @Column
-    String ville_arrivee;
+    String villeArrivee;
     @Column
     String date;
     @Column
@@ -26,9 +25,8 @@ public class Trajet {
     @Column
     Boolean complet;
 
-    @JoinColumn
-    @ManyToOne
-    UserEntity conducteur;
+    @Column
+    UUID conducteurID;
 
     @Column
     Integer prix;
