@@ -158,7 +158,7 @@ function insertFakeData(){
 
 
 }
-function insertFakeUsers(){
+async function insertFakeUsers(){
 
     let users = [
         {
@@ -177,9 +177,9 @@ function insertFakeUsers(){
             email: "estelle@depoulet.com"
         },
         {
-            lastname: "Pascontent",
-            firstname: "Calimero",
-            email: "ginger@cocote.com"
+            lastname: "Cluck",
+            firstname: "Buck",
+            email: "buck@cluck.com"
         },
     ]
 
@@ -192,13 +192,17 @@ function insertFakeUsers(){
         body: null
     }
 
-    users.forEach(user => {
+    let response = []
+    for (const user of users) {
         conf.body = JSON.stringify(user)
-        let query = fetch(`${API_URL}user/addUser`, conf)
-        query.then(response => {
-            console.log(response)
-        })
-    })
+        let query = await fetch(`${API_URL}user/addUser`, conf)
+        if(query.ok === true){
+            response.push(query)
+        } else {
+            throw new Error("Une erreur est survenue")
+        }
+    }
+    return response
 
 }
 
