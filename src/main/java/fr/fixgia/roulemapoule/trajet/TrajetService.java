@@ -7,7 +7,6 @@ import java.util.UUID;
 
 @Service
 public class TrajetService implements ITrajetService{
-
     private final TrajetRepository trajetRepository;
 
     public TrajetService(TrajetRepository trajetRepository) {
@@ -16,8 +15,9 @@ public class TrajetService implements ITrajetService{
 
     @Override
     public void createTrajet(Trajet trajet) {
-        trajet.reserver = true;
+        trajet.setPlaces(trajet.getPlaces()- 1);
         trajetRepository.save(trajet);
+
     }
 
     @Override

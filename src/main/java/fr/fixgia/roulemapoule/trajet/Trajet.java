@@ -1,5 +1,6 @@
 package fr.fixgia.roulemapoule.trajet;
 
+import fr.fixgia.roulemapoule.user.UserEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.Date;
@@ -21,8 +22,18 @@ public class Trajet {
     @Column
     String description;
     @Column
-    String Places;
+    Integer Places;
     @Column
-    Boolean reserver;
+    Boolean complet;
+
+    @Column
+    @ManyToOne
+    UserEntity conducteur;
+
+    @Column
+    Integer prix;
+
+    @Column
+    String heureDepart;
 
 }
