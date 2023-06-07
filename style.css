@@ -12,6 +12,7 @@ nav ul {
     margin: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 nav ul li {
@@ -52,15 +53,23 @@ nav .nouveauTrajet {
     right: 10px;
 }
 
+nav .profil {
+    position: absolute;
+    left: 10px;
+}
+
 nav svg {
     height: 50px;
     color: white;
 }
 
-nav .nouveauTrajet span {
+nav .nouveauTrajet span, nav .profil span {
     display: none
 }
 
+nav span {
+    color: white
+}
 
 /* BARRE RECHERCHE */ 
 .recherche {
@@ -143,7 +152,7 @@ nav .nouveauTrajet span {
         nav {
             font-family: cursive
         }
-        nav .nouveauTrajet span  {
+        nav span  {
     display: block
         }
 
@@ -156,7 +165,14 @@ nav .nouveauTrajet span {
             width: 10%;
             margin-right: 10%;
         }
-        nav .nouveauTrajet a {
+        nav .profil {
+            width: 10%;
+            margin-left: 10%;
+        }
+        nav ul {
+            justify-content: flex-start;
+        }
+        nav li {
             display: flex;
             flex-direction: column;
             align-items: center;
