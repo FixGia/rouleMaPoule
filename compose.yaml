@@ -26,5 +26,13 @@ services :
       MYSQL_PASSWORD: user
     depends_on:
       - mysql
+  apache:
+    image: httpd:latest
+    container_name: apache-server
+    ports:
+      - "80:80"
+    volumes:
+      - ./path/to/your/html/files:/usr/local/apache2/htdocs
+
 volumes:
   db_data: {}
